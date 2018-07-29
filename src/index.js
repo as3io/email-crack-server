@@ -1,7 +1,7 @@
 const env = require('./env');
 const output = require('./output');
 const pkg = require('../package.json');
-const { app } = require('./express');
+const app = require('./express');
 
 const { PORT } = env;
 

@@ -4,6 +4,10 @@
   "main": "src/index.js",
   "author": "Jacob Bare <jacob@limit0.io>",
   "license": "MIT",
+  "scripts": {
+    "start": "node_modules/.bin/gulp",
+    "lint": "./node_modules/.bin/eslint \"src/**/*.js\""
+  },
   "devDependencies": {
     "eslint": "^5.2.0",
     "eslint-config-airbnb-base": "^13.0.0",
