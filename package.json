@@ -3,5 +3,10 @@
   "version": "0.1.0",
   "main": "src/index.js",
   "author": "Jacob Bare <jacob@limit0.io>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.2.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0"
+  }
 }
