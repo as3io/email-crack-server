@@ -1,0 +1,7 @@
+{
+  "name": "email-crack-server",
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "author": "Jacob Bare <jacob@limit0.io>",
+  "license": "MIT"
+}
