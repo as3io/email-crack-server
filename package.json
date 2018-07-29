@@ -9,5 +9,9 @@
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.13.0",
     "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "envalid": "^4.1.4",
+    "express": "^4.16.3"
   }
 }
