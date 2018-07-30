@@ -5,6 +5,7 @@
   "author": "Jacob Bare <jacob@limit0.io>",
   "license": "MIT",
   "scripts": {
+    "terminal": "if [ \"$(docker inspect -f {{.State.Running}} emailcrackserver_app_1 2>/dev/null)\" = true ]; then docker exec -it emailcrackserver_app_1 /bin/bash; else printf \"$npm_package_docker_terminal_error\" && exit 1; fi",
     "prestart": "$npm_package_docker_dev_install",
     "start": "$npm_package_docker_dev_up",
     "stop": "$npm_package_docker_dev_down",
