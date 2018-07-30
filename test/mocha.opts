@@ -1,0 +1,4 @@
+--async-only
+--recursive
+--timeout 2000
+--require ./test/bootstrap.js
