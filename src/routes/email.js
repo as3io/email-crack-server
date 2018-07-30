@@ -20,7 +20,7 @@ router.use(helmet());
  */
 router.get('/:name', (req, res, next) => {
   const { name } = req.params;
-  load(name, req)
+  load(name, { req })
     .then(html => res.send(html))
     .catch(next);
 });
