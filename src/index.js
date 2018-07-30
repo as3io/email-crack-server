@@ -1,5 +1,5 @@
 const env = require('./env');
-const output = require('./output');
+const output = require('./utils/output');
 const pkg = require('../package.json');
 const app = require('./express');
 
