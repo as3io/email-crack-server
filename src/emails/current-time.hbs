@@ -1,10 +1,14 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Current Time</title>
-  </head>
-  <body>
-    <h1>Hello!</h1>
-    <p>The current <strong>server</strong> time is <em>{{moment-format (now) "MMMM Do, YYYY @ HH:mm:ss.SSSZ"}}</em></p>
-  </body>
-</html>
+<mjml>
+  <mj-head>
+    <mj-title>Current Time</mj-title>
+    <mj-font name="Raleway" href="https://fonts.googleapis.com/css?family=Raleway" />
+  </mj-head>
+  <mj-body>
+    <mj-section>
+      <mj-column>
+        <mj-text font-size="15px">The current server time is:</mj-text>
+        <mj-text font-size="15px" color="blue">{{moment-format (now) "MMMM Do, YYYY @ HH:mm:ss.SSSZ"}}</mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

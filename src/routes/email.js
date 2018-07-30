@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const helmet = require('helmet');
+const mjml2html = require('mjml');
 const load = require('../load-template');
 
 const router = Router();
@@ -21,7 +22,7 @@ router.use(helmet());
 router.get('/:name', (req, res, next) => {
   const { name } = req.params;
   load(name, { req })
-    .then(html => res.send(html))
+    .then(mjml => res.send(mjml2html(mjml).html))
     .catch(next);
 });
 

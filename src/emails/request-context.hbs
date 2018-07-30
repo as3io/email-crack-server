@@ -1,10 +1,15 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Request Context</title>
-  </head>
-  <body>
-    <h1>Hello!</h1>
-    <p>You're accesing this using <em>{{req.headers.user-agent}}</em></p>
-  </body>
-</html>
+<mjml>
+  <mj-head>
+    <mj-title>Request Context</mj-title>
+    <mj-font name="Raleway" href="https://fonts.googleapis.com/css?family=Raleway" />
+  </mj-head>
+  <mj-body>
+    <mj-section>
+      <mj-column>
+        <mj-text font-size="15px">
+          You're accesing this using {{req.headers.user-agent}}
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>
