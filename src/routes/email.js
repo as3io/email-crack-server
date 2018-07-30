@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const helmet = require('helmet');
-const load = require('../emails/load');
+const load = require('../load-template');
 
 const router = Router();
 router.use(helmet());
