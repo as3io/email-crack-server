@@ -2,7 +2,8 @@ version: '3'
 services:
   app:
     tty: true
-    image: 'node:8.11'
+    image: node:8.11
+    working_dir: /app
     ports:
       - "${EMAIL_CRACK_PORT-8472}:8472"
     volumes:

@@ -1,8 +1,9 @@
 version: '3'
 services:
-  app:
+  test:
     tty: true
-    image: 'node:8.11'
+    image: node:8.11
+    working_dir: /app
     volumes:
       - ../:/app:cached
       - node_modules:/app/node_modules
