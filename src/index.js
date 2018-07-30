@@ -6,6 +6,6 @@ const app = require('./express');
 const { PORT } = env;
 
 const server = app.listen(PORT);
-output.write(`Express app '${pkg.name}:v${pkg.version}' listening on port ${PORT}`);
+output.write(`Express app '${pkg.name}:v${pkg.version}' listening on http://localhost:${PORT}`);
 
 module.exports = server;
