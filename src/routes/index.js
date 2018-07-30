@@ -1,5 +1,5 @@
-const sandbox = require('./sandbox');
+const email = require('./email');
 
 module.exports = (app) => {
-  app.use('/sandbox', sandbox);
+  app.use('/email', email);
 };
