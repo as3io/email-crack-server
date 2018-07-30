@@ -5,8 +5,31 @@
   "author": "Jacob Bare <jacob@limit0.io>",
   "license": "MIT",
   "scripts": {
-    "start": "node_modules/.bin/gulp",
-    "lint": "./node_modules/.bin/eslint \"src/**/*.js\""
+    "prestart": "$npm_package_docker_dev_install",
+    "start": "$npm_package_docker_dev_up",
+    "stop": "$npm_package_docker_dev_down",
+    "prelint": "$npm_package_docker_test_install",
+    "lint": "$npm_package_docker_test_lint",
+    "postlint": "$npm_package_docker_test_down",
+    "pretest": "yarn run posttest && $npm_package_docker_test_install",
+    "posttest": "$npm_package_docker_test_down && $npm_package_docker_test_prune",
+    "test": "$npm_package_docker_test_test",
+    "lint:run": "./node_modules/.bin/eslint \"src/**/*.js\"",
+    "test:run": "yarn run lint:run && ./node_modules/.bin/mocha --reporter spec"
+  },
+  "docker": {
+    "dev": {
+      "install": "docker-compose -p emailcrackserver run --no-deps --entrypoint yarn app",
+      "up": "docker-compose -p emailcrackserver up",
+      "down": "docker-compose -p emailcrackserver down"
+    },
+    "test": {
+      "install": "docker-compose -p emailcrackservertest -f test/docker-compose.yml run --no-deps --entrypoint yarn test",
+      "test": "docker-compose -p emailcrackservertest -f test/docker-compose.yml run test",
+      "lint": "docker-compose -p emailcrackservertest -f test/docker-compose.yml run --entrypoint yarn test run lint:run",
+      "down": "docker-compose -p emailcrackservertest -f test/docker-compose.yml down",
+      "prune": "docker volume prune --filter label=io.as3.appname=email-crack-server --filter label=io.as3.env=test --filter label=io.as3.discard=true --force"
+    }
   },
   "devDependencies": {
     "chai": "^4.1.2",

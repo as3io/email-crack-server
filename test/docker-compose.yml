@@ -1,0 +1,17 @@
+version: '3'
+services:
+  app:
+    tty: true
+    image: 'node:8.11'
+    volumes:
+      - ../:/app:cached
+      - node_modules:/app/node_modules
+    entrypoint: yarn test:run
+    environment:
+      NODE_ENV: test
+      PORT: 8100
+volumes:
+  node_modules:
+    labels:
+      io.as3.appname: "email-crack-test"
+      io.as3.env: "test"
